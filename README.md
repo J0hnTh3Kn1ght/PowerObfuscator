@@ -5,7 +5,7 @@
 
 | :exclamation:  **Under development**  :exclamation: |
 
-Now that I’ve entered this world of Windows hacking and code obfuscation, while I was digging through the internet looking for stuff about PowerShell for Red Team that’s out there, I noticed that the content from various experts is extremely detailed and informative, but no one has yet created a tool that lets you replicate their valuable tips in a single playground/interface/website (call it what you will) so you can obfuscate your script.
+Now that I’ve entered this world of Windows hacking and code obfuscation, while I was digging through the internet looking for stuff about PowerShell for Red Team that’s out there, I noticed that the content from various experts is extremely detailed and informative, but no one has yet created a tool that lets you replicate their valuable tips in a single playground/interface/website (Call it what you want) so you can obfuscate your script.
 
 I enjoyed my trial-and-error experience and experimenting with different combinations of techniques so much that I decided to create this tool.
 
