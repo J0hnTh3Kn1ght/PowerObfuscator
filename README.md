@@ -59,8 +59,8 @@ The tool reads the contents of files (.ps1 and .txt) that you can upload and doe
 They're the best: @danielbohannon, @klezVirus, @t3l3machus and others.
 
 #### Source:
-https://github.com/t3l3machus/PowerShell-Obfuscation-Bible
-https://www.youtube.com/watch?v=tGFdmAh_lXE
-https://www.datatechguard.com/powershell-obfuscation-stealth-confusion/
-https://darkbyte.net/ofuscando-scripts-de-powershell-con-invoke-stealth/
-https://www.wietzebeukema.nl/blog/powershell-obfuscation-using-securestring
+- https://github.com/t3l3machus/PowerShell-Obfuscation-Bible
+- https://www.youtube.com/watch?v=tGFdmAh_lXE
+- https://www.datatechguard.com/powershell-obfuscation-stealth-confusion/
+- https://darkbyte.net/ofuscando-scripts-de-powershell-con-invoke-stealth/
+- https://www.wietzebeukema.nl/blog/powershell-obfuscation-using-securestring
