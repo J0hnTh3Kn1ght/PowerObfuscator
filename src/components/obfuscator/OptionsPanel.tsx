@@ -55,6 +55,16 @@ const TOGGLES: ToggleDef[] = [
     description: "Wraps strings with additional quoting.",
   },
   {
+    key: "stringConcatSplitFlag",
+    label: "Split strings",
+    description: "Breaks cmdlet, print and method string literals into concatenated pieces.",
+  },
+  {
+    key: "bytesToCharsFlag",
+    label: "Bytes to chars",
+    description: "Rebuilds string literals from [char][byte] hex sequences.",
+  },
+  {
     key: "addCommentsFlag",
     label: "Add comments",
     description: "Inserts junk comments through the script.",
