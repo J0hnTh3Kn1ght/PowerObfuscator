@@ -1,4 +1,9 @@
-<img width="1600" height="898" alt="Captura de tela de 2026-08-04 21-18-55" src="https://github.com/user-attachments/assets/f396b6a0-38a2-4b73-b861-4aa29925b629" /></br></br>
+
+
+https://github.com/user-attachments/assets/54cf6228-5ee0-4c9b-a9c5-91e65c622cf3
+
+</br>
+
 
 ![Captura_de_imagem_20240707_125436-removebg-preview](https://github.com/user-attachments/assets/d706ce07-285d-46b0-94fe-fd50e7b60169)
 #
@@ -43,6 +48,8 @@ The tool reads the contents of files (.ps1 and .txt) that you can upload and doe
 | **Command Replacement (PWD)** | Swaps `pwd` calls for equivalent expressions (`gl`, `Get-Location`, etc.) |
 | **Variable Renaming** | Renames every declared variable to a randomized identifier (configurable length and charset) |
 | **Case Randomization** | Randomizes the casing of cmdlet and parameter names, skipping string literals |
+| **String Concat** | Breaks cmdlet, print and method string literals into concatenated pieces. |
+| **Bytes to Chars** | Rebuilds string literals from [char][byte] hex sequences. |
 | **Cmdlet Quote Interruption** | Wraps random substrings of cmdlet/parameter names in quotes, skipping string literals |
 | **Comment Injection** | Inserts custom or default comments at safe positions, skipping string literals |
 
