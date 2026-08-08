@@ -3,11 +3,13 @@ import {
   addComments,
   addQuotes,
   addValidate,
+  bytesToChars,
   randomizeCase,
   removeComments,
   renameVars,
   replaceBooleans,
   replacePwd,
+  stringConcatSplit,
   toOneLiner,
 } from "./transforms";
 
@@ -25,6 +27,8 @@ export interface ObfuscateOptions {
   replaceBooleansFlag: boolean;
   replacePwdFlag: boolean;
   renameVarsFlag: boolean;
+  stringConcatSplitFlag: boolean;
+  bytesToCharsFlag: boolean;
   customCommentText?: string;
   commentCount?: number;
 }
@@ -42,6 +46,8 @@ export function obfuscate(input: string, opts: ObfuscateOptions): string {
   if (opts.replaceBooleansFlag) payload = replaceBooleans(payload, rng);
   if (opts.replacePwdFlag) payload = replacePwd(payload, rng);
   if (opts.renameVarsFlag) payload = renameVars(payload, opts.iterLength, opts.iterChar || "f", rng);
+  if (opts.stringConcatSplitFlag) payload = stringConcatSplit(payload);
+  if (opts.bytesToCharsFlag) payload = bytesToChars(payload);
   if (opts.randomizeCaseFlag) payload = randomizeCase(payload, rng);
   if (opts.addQuoteFlag) payload = addQuotes(payload, rng);
   if (opts.addCommentsFlag) { payload = addComments(payload, opts.oneLiner, rng, opts.customCommentText, opts.commentCount ?? 10,); }
