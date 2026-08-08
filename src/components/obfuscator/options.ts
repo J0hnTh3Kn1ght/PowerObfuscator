@@ -8,6 +8,8 @@ export interface ObfuscationState {
   replaceBooleansFlag: boolean;
   replacePwdFlag: boolean;
   renameVarsFlag: boolean;
+  stringConcatSplitFlag: boolean;
+  bytesToCharsFlag: boolean;
   iterLength: number;
   iterChar: string;
   customCommentText: string;
@@ -24,6 +26,8 @@ export const DEFAULT_OPTIONS: ObfuscationState = {
   replaceBooleansFlag: false,
   replacePwdFlag: false,
   renameVarsFlag: false,
+  stringConcatSplitFlag: false,
+  bytesToCharsFlag: false,
   iterLength: 20,
   iterChar: "f",
   customCommentText: "",
