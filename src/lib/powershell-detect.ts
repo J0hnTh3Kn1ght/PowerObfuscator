@@ -49,7 +49,8 @@ const SOFT_POSITIVES: Array<[RegExp, number]> = [
   [/@\(/, 1],
 ];
 
-const SOFT_THRESHOLD = 4;
+
+
 
 function stripQuotesAndComments(src: string): string {
   return src.replace(/<#[\s\S]*?#>/g, " ").replace(/(^|\s)#[^\n]*/g, "$1 ")
@@ -58,6 +59,9 @@ function stripQuotesAndComments(src: string): string {
     .replace(/"(?:`.|[^"\\])*"/g, ' "STR" ')
     .replace(/'(?:''|[^'])*'/g, " 'STR' ");
 }
+
+
+
 
 export function looksLikePowerShell(src: string): boolean {
   const raw = src.trim();
@@ -70,5 +74,5 @@ export function looksLikePowerShell(src: string): boolean {
 
   let score = 0;
   for (const [p, w] of SOFT_POSITIVES) if (p.test(s)) score += w;
-  return score >= SOFT_THRESHOLD;
+  return score >= 4;
 }
