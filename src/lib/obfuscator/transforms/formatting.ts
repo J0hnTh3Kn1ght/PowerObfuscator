@@ -20,30 +20,52 @@ const DEFAULT_COMMENT_TEXT = "Suspendisse imperdiet lacus eu tellus pellentesque
 
 export function toOneLiner(payload: string): string {
   const stripped = payload.replace(/<#[\s\S]*?#>/g, "");
-  const statements: string[] = [];
-  let buffer = "";
+  const spans = quotedSpans(stripped);
 
-  for (let line of stripped.split(/\r?\n/)) {
-    line = line.trim();
+  let out = "";
+  let depth = 0;
+  let spanIdx = 0;
+  let i = 0;
 
-    if (!line || line.startsWith("#")) continue;
-
-    line = line.replace(/(^|[^`])#.*$/, "$1").trim();
-
-    if (!line) continue;
-    if (line.endsWith("`")) {
-      buffer += line.slice(0, -1).trim() + " ";
+  while (i < stripped.length) {
+    const span = spans[spanIdx];
+    if (span && i === span[0]) {
+      out += stripped.slice(span[0], span[1]);
+      i = span[1];
+      spanIdx++;
       continue;
     }
 
-    buffer += line;
-    statements.push(buffer);
-    buffer = "";
+    const c = stripped[i]!;
+
+    if (c === "\r") { i++; continue; }
+
+    if (c === "#" && stripped[i - 1] !== "`") {
+      while (i < stripped.length && stripped[i] !== "\n") i++;
+      continue;
+    }
+
+    if (c === "`" && (stripped[i + 1] === "\n" || (stripped[i + 1] === "\r" && stripped[i + 2] === "\n"))) {
+      out = out.trimEnd() + " ";
+      i += stripped[i + 1] === "\r" ? 3 : 2;
+      continue;
+    }
+
+    if (c === "(" || c === "[") depth++;
+    else if (c === ")" || c === "]") depth = Math.max(0, depth - 1);
+
+    if (c === "\n") {
+      const continues = depth > 0 || /^\s*(?:catch|finally|elseif|else)\b/i.test(stripped.slice(i + 1, i + 65));
+      out = out.trimEnd() + (continues ? " " : "; ");
+      i++;
+      continue;
+    }
+
+    out += c;
+    i++;
   }
 
-  if (buffer) statements.push(buffer);
-
-  return statements.join("; ").replace(/;\s*;+/g, ";").replace(/\{\s*;/g, "{").replace(/;\s*\}/g, "}").replace(/ {2,}/g, " ").trim();
+  return out.replace(/;\s*;+/g, ";").replace(/\{\s*;/g, "{").replace(/;\s*\}/g, "}").replace(/ {2,}/g, " ").trim();
 }
 
 
