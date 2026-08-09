@@ -24,7 +24,7 @@ It’s an obfuscation tool designed for quick, hands-on use, and it combines all
 ### Shannon Entropy Score && Analysis
 ****"The greater the entropy, the more likely the data is obfuscated or encrypted, and the more probable the file/payload is malicious"**** - ![PowerShell Obfuscation Bible](https://github.com/t3l3machus/PowerShell-Obfuscation-Bible). Antivirus products use entropy analysis to identify potentially malicious files and payloads, so it's important for you to pay attention to the values. The tool tracks your score as you edit.
 ### Layers of obfuscation 
-Currently, the tool supports 9 editing options that can be combined into various different payloads, and you can increase the level of default obfuscation and customize.
+Currently, the tool supports 11 editing options that can be combined into various different payloads, and you can increase the level of default obfuscation and customize.
 ### Client-side
 And there are no network calls or server-side logic. It's all yours, and the code is open source so you can edit it however you like.
 ### Context-Analyzer
