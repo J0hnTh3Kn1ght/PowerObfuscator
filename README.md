@@ -10,10 +10,6 @@ https://github.com/user-attachments/assets/54cf6228-5ee0-4c9b-a9c5-91e65c622cf3
 
 | :exclamation:  **Under development**  :exclamation: |
 
-Now that I’ve entered this world of Windows hacking and code obfuscation, while I was digging through the internet looking for stuff about PowerShell for Red Team that’s out there, I noticed that the content from various experts is extremely detailed and informative, but no one has yet created a tool that lets you replicate their valuable tips in a single playground/interface/website (Call it what you want) so you can obfuscate your script.
-
-I enjoyed my trial-and-error experience and experimenting with different combinations of techniques so much that I decided to create this tool.
-
 It’s an obfuscation tool designed for quick, hands-on use, and it combines all the advanced obfuscation techniques I’ve learned and managed to replicate (so far). And it will definitely continue to be updated as I figure out how to combine other obfuscation methods.
 
 > ⚠️ This tool covers advanced obfuscation techniques, but it is intended solely for educational purposes, and under no circumstances should you use the content in environments to which you do not have access or authorization. Always act with responsibility.
